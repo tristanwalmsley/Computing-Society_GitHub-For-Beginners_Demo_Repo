@@ -1,0 +1,71 @@
+============================================================================
+ BONUS: THE GIT COMMANDS BEHIND THE TASKS
+============================================================================
+ Everything you did with GitHub Desktop / Visual Studio can also be done by
+ typing commands in a terminal (in VS: View > Terminal). GitHub Desktop and
+ Visual Studio are just running these for you!
+
+ Same task numbers as in main.cpp. Open a terminal INSIDE the repo folder.
+
+ TASK 1  - MAKE YOUR OWN COPY, THEN CLONE IT
+     (Use this template > Create a new repository, on github.com)
+     git clone <your-repo-url>        (the link to YOUR copy)
+     cd <your-repo-name>
+     git status                       (shows what's changed; should be clean)
+     git remote -v                    (shows "origin" = where you push to)
+
+ TASK 2  - MAKE A BRANCH
+     git checkout -b add-<yourname>   (create + switch to a new branch)
+     git branch                       (list branches; * = the one you're on)
+
+ TASK 3  - ADD A LINE, THEN COMMIT
+     git status                       (see which files changed)
+     git diff                         (see the exact lines changed, +/-)
+     git add DummyRepo/members.cpp    (stage the file = "include in next commit")
+     git commit -m "Add <yourname> to members"
+
+ TASK 4/5/6 - EDIT / REMOVE / ADD A LINE
+     git add DummyRepo/main.cpp
+     git commit -m "Change tagline"
+     (shortcut: "git commit -am" stages AND commits already-tracked files)
+
+ TASK 7  - LOOK AT YOUR HISTORY
+     git log --oneline                (one line per commit)
+     git show <commit-id>             (see what one commit changed)
+
+ TASK 8  - PUSH & PULL REQUEST
+     git push -u origin add-<yourname>
+     (then open and merge the pull request on github.com)
+
+ TASK 9  - SYNC YOUR PC
+     git checkout main
+     git pull
+
+ TASK 10 - MERGE CONFLICT (SOLO VERSION)
+     git checkout main
+     git checkout -b conflict-a       (edit tagline, then:)
+     git commit -am "Tagline A"
+     git checkout main
+     git checkout -b conflict-b       (edit SAME tagline line differently, then:)
+     git commit -am "Tagline B"
+     git checkout main
+     git merge conflict-a             (works fine)
+     git merge conflict-b             (CONFLICT! Git marks the file)
+     (edit the file, remove the <<<<<<< ======= >>>>>>> lines, save)
+     git add <file>
+     git commit                       (finishes the merge)
+     git push
+
+ TASK 11 - UNDO
+     git restore <file>               (discard uncommitted changes to a file)
+     git revert <commit-id>           (make a new commit that undoes an old one)
+
+----------------------------------------------------------------------------
+ EXTRA THINGS TO TRY
+----------------------------------------------------------------------------
+     git fetch                        (check for new changes WITHOUT merging)
+     git stash / git stash pop        (temporarily shelve unfinished changes)
+     git branch -d <branch>           (delete a branch you're done with)
+     git log --graph --oneline --all  (draw your branches and merges!)
+     git blame DummyRepo/main.cpp     (who last changed each line?)
+============================================================================

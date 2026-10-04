@@ -1,0 +1,24 @@
+# ----------------------------------------------------------------------------
+# .gitignore: tells Git which files to NOT track.
+# Build output and Visual Studio's private files shouldn't be committed.
+# Try it: build the project, then run "git status". The build folders won't
+# show up because of the rules below!
+# ----------------------------------------------------------------------------
+
+# Visual Studio settings
+.vs/
+*.user
+*.suo
+
+# Build output
+x64/
+Debug/
+Release/
+bin/
+obj/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.log
